@@ -9,8 +9,7 @@ import UIKit
 import SnapKit
 
 class HomeViewController: ViewController {
-    
-    
+
     let filterBg = UIColor(red: 0.98, green: 0.929, blue: 0.804, alpha: 1.0)
     let borderColor = CGColor(red: 0.678, green: 0.757, blue: 0.502, alpha: 1.0)
 
@@ -129,7 +128,7 @@ class HomeViewController: ViewController {
         notifButton.backgroundColor = lighterGreen
         notifButton.layer.borderWidth = 1
         notifButton.layer.borderColor = borderColor
-        //homeButton.addTarget(self, action: #selector(presentView), for:.touchUpInside)
+        notifButton.addTarget(self, action: #selector(presentNotifications), for:.touchUpInside)
         //avatarButton.setImage(avatarImage, for: .normal)
         notifButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(notifButton)
@@ -176,6 +175,9 @@ class HomeViewController: ViewController {
     }
     @objc func presentProfile() {
         navigationController?.pushViewController(ProfileViewController(), animated: true)
+    }
+    @objc func presentNotifications() {
+        navigationController?.pushViewController(NotificationViewController(), animated: true)
     }
 
 //    func filterDogs()  {
