@@ -84,13 +84,7 @@ class ProfileViewController: UIViewController {
             make.left.equalTo(profileButton.snp.right)
             make.width.equalTo(view.snp.width).multipliedBy(0.333)
         }
-        
-        editButton.setTitle("Edit", for: .normal)
-        editButton.setTitleColor(.white, for: .normal)
-        editButton.translatesAutoresizingMaskIntoConstraints = false
-        editButton.addTarget(self, action: #selector(openEditPage), for: .touchUpInside)
-        view.addSubview(editButton)
-        
+    
         modelPic.image = UIImage(named: modelDog.dogImage)
         modelPic.contentMode = .scaleAspectFit
         modelPic.translatesAutoresizingMaskIntoConstraints = false
@@ -127,6 +121,11 @@ class ProfileViewController: UIViewController {
         modelAgeNumber.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(modelAgeNumber)
         
+        editButton.setTitle("Edit", for: .normal)
+        editButton.setTitleColor(.black, for: .normal)
+        editButton.translatesAutoresizingMaskIntoConstraints = false
+        editButton.addTarget(self, action: #selector(openEditPage), for: .touchUpInside)
+        view.addSubview(editButton)
         
         
         let padding = 15
@@ -162,13 +161,19 @@ class ProfileViewController: UIViewController {
             make.top.equalTo(modelAgeLabel.snp_bottomMargin).offset(20)
         }
         
+        editButton.snp.makeConstraints { (make) in
+            make.top.equalTo(modelName.snp.top)
+            make.bottom.equalTo(modelName.snp.bottom)
+            make.right.equalTo(modelDescriptionBox.snp.rightMargin).offset(-padding)
+        }
+        
     }
 
     @objc func popDetailedView() {
         navigationController?.popViewController(animated: true)
     }
     @objc func openEditPage() {
-        print("hello")
+        present(EditViewController(), animated: true)
     }
 }
 
