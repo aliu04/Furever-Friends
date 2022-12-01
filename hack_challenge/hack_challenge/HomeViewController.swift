@@ -16,11 +16,11 @@ class HomeViewController: ViewController {
 
     //size: 0 = small, 1 = medium, 2 = big
     //volume: 3 = quiet, 4 = loud
-    let dog1 = Dog(dogImage: "dog", dogName: "Buddy", dogDescription: "Likes long walks", dogSize: 0, dogVolume: 3, displayed: true )
-    let dog2 = Dog(dogImage: "dog2", dogName: "Spot", dogDescription: "Likes long walks", dogSize: 1, dogVolume: 4, displayed: true)
-    let dog3 = Dog(dogImage: "dog3", dogName: "Summer", dogDescription: "Likes long walks", dogSize: 2, dogVolume: 4, displayed: true)
-    let dog4 = Dog(dogImage: "dog4", dogName: "Cat", dogDescription: "Likes long walks", dogSize: 1, dogVolume: 3, displayed: true)
-    let dog5 = Dog(dogImage: "dog5", dogName: "Winter", dogDescription: "Likes long walks", dogSize: 2, dogVolume: 3, displayed: true)
+    let dog1 = Dog(dogImage: "dog", dogName: "Buddy", dogDescription: "Likes long walks", displayed: true, dogAge: 2 )
+    let dog2 = Dog(dogImage: "dog2", dogName: "Spot", dogDescription: "Likes long walks", displayed: true, dogAge: 3 )
+    let dog3 = Dog(dogImage: "dog3", dogName: "Summer", dogDescription: "Likes long walks", displayed: true, dogAge: 10 )
+    let dog4 = Dog(dogImage: "dog4", dogName: "Cat", dogDescription: "Likes long walks", displayed: true, dogAge: 5 )
+    let dog5 = Dog(dogImage: "dog5", dogName: "Winter", dogDescription: "Likes long walks", displayed: true, dogAge: 12 )
     
 //    let smallFilter = UILabel()
 //    let mediumFilter = UILabel()

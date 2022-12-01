@@ -12,16 +12,18 @@ class Dog {
     var dogImage: String
     var dogName: String
     var dogDescription: String
-    var dogSize: Int
-    var dogVolume: Int
+    var dogAge: Int
+    //var dogSize: Int
+    //var dogVolume: Int
     var displayed: Bool
 
-    init(dogImage: String, dogName: String, dogDescription: String, dogSize: Int, dogVolume: Int, displayed: Bool) {
+    init(dogImage: String, dogName: String, dogDescription: String, displayed: Bool, dogAge: Int) {
         self.dogImage = dogImage
         self.dogName = dogName
         self.dogDescription = dogDescription
-        self.dogSize = dogSize
-        self.dogVolume = dogVolume
+        self.dogAge = dogAge
+        //self.dogSize = dogSize
+        //self.dogVolume = dogVolume
         self.displayed = displayed
     }
 
