@@ -34,6 +34,7 @@ class NotificationViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = bgGreen
         title = "Notifications"
+        self.navigationItem.hidesBackButton = true
         
         notifs = [dog1, dog2, dog3]
         
