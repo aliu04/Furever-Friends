@@ -1,0 +1,6 @@
+framework module Pods_hack_challenge {
+  umbrella header "Pods-hack_challenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
