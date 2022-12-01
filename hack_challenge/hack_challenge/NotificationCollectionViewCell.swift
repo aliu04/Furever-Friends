@@ -10,6 +10,7 @@ import SnapKit
 
 class NotificationCollectionViewCell: UICollectionViewCell {
     var notif = UILabel()
+    let bgGreen = UIColor(red: 0.867, green: 0.898, blue: 0.714, alpha: 1.0)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +30,7 @@ class NotificationCollectionViewCell: UICollectionViewCell {
     }
     
     func configureNotifs(match: Dog) {
-        notif.text = "You matched with " + match.dogName
+        notif.text = "You matched with " + match.dogName + "!"
     }
 
     required init?(coder: NSCoder) {
