@@ -48,32 +48,31 @@ class NotificationViewController: UIViewController {
             collectionView1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -collectionViewPadding)
         ])
     }
-    
-    extension NotificationViewController: UICollectionViewDataSource {
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return notifs.count
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: notifReuseIdentifier, for: indexPath) as? NotificationCollectionViewCell {
-                cell.configureNotifs(match: notifs[indexPath.row])
-                return cell
-            } else {
-                return UICollectionViewCell()
-            }
-            
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            navigationController?.pushViewController(DetailedViewController(dog: notifs[indexPath.row]), animated: true)
-        }
-    }
-    
-    extension NotificationViewController: UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let size = (collectionView1.frame.width - 10) / 2.0
-            return CGSize(width: size, height: size)
-        }
-    }
-
 }
+extension NotificationViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return notifs.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: notifReuseIdentifier, for: indexPath) as? NotificationCollectionViewCell {
+            cell.configureNotifs(match: notifs[indexPath.row])
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailedViewController(dog: notifs[indexPath.row]), animated: true)
+    }
+}
+
+extension NotificationViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = (collectionView1.frame.width - 10) / 2.0
+        return CGSize(width: size, height: size)
+    }
+}
+
