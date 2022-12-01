@@ -130,6 +130,7 @@ class ProfileViewController: UIViewController {
         
         let padding = 15
         let padding2 = 25
+        
         modelPic.snp.makeConstraints { (make) in
             make.top.equalTo(view.snp_topMargin).offset(padding)
             make.left.equalTo(view.snp_leftMargin)

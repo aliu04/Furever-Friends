@@ -13,6 +13,7 @@ class DetailedViewController: UIViewController {
     let bgGreen = UIColor(red: 0.867, green: 0.898, blue: 0.714, alpha: 1.0)
     let lighterGreen = UIColor(red: 0.914, green: 0.929, blue: 0.788, alpha: 1.0)
     let darkGreen = UIColor(red: 0.157, green: 0.212, blue: 0.094, alpha: 1.0)
+    let borderColor = CGColor(red: 0.678, green: 0.757, blue: 0.502, alpha: 1.0)
     
     var descriptionBox = UIView(frame: .zero)
     
@@ -22,6 +23,8 @@ class DetailedViewController: UIViewController {
     let dogNameLabel = UILabel()
     let dogAgeLabel = UILabel()
     let dogAgeNumber = UILabel()
+    let like = UIButton()
+    let dislike = UIButton()
     
     //weak var delegate: detailedInfoDelegate?
     
@@ -73,6 +76,16 @@ class DetailedViewController: UIViewController {
         dogAgeNumber.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dogAgeNumber)
         
+        like.contentMode = .scaleAspectFill
+        like.setImage(UIImage(named: "heart button"), for: .normal)
+        like.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(like)
+        
+        dislike.contentMode = .scaleAspectFill
+        dislike.setImage(UIImage(named: "x button"), for: .normal)
+        dislike.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dislike)
+        
         
         let padding = 15
         dogPic.snp.makeConstraints { (make) in
@@ -105,7 +118,26 @@ class DetailedViewController: UIViewController {
             make.right.equalTo(view.snp_rightMargin).offset(-padding)
             make.top.equalTo(dogAgeLabel.snp_bottomMargin).offset(20)
         }
+        
+        setupConstraints()
 
+    }
+    
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            like.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20),
+            like.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
+            like.widthAnchor.constraint(equalToConstant: 165),
+            like.heightAnchor.constraint(equalToConstant: 165)
+        ])
+        
+        NSLayoutConstraint.activate([
+            dislike.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20),
+            dislike.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -100),
+            dislike.widthAnchor.constraint(equalToConstant: 165),
+            dislike.heightAnchor.constraint(equalToConstant: 165)
+        ])
+        
     }
 }
 

@@ -9,6 +9,11 @@ import UIKit
 
 class EditViewController: UIViewController {
     
+    let bgGreen = UIColor(red: 0.867, green: 0.898, blue: 0.714, alpha: 1.0)
+    let lighterGreen = UIColor(red: 0.914, green: 0.929, blue: 0.788, alpha: 1.0)
+    let darkGreen = UIColor(red: 0.157, green: 0.212, blue: 0.094, alpha: 1.0)
+    
+    var pageTitle = UILabel()
     var editImage = UIButton()
     var editName = UITextField()
     var editBio = UITextField()
@@ -18,15 +23,16 @@ class EditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
-        title = "Hello Helen"
+        view.backgroundColor = bgGreen
+        
+        pageTitle.text = "Edit Profile"
         
         saveButton.setTitle("Done", for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.layer.borderColor = UIColor.white.cgColor
         saveButton.layer.borderWidth = 1
         saveButton.layer.cornerRadius = 10
-        saveButton.backgroundColor = .black
+        saveButton.backgroundColor = darkGreen
         saveButton.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(saveButton)
