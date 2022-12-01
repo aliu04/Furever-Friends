@@ -17,7 +17,7 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemPink
-        
+        title = "Hello Helen"
 
     }
 
