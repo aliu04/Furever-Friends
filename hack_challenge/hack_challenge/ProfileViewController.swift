@@ -98,14 +98,9 @@ class ProfileViewController: UIViewController {
         
         
         modelDescriptionBox.backgroundColor = .white
+        modelDescriptionBox.layer.cornerRadius = 15
         view.addSubview(modelDescriptionBox)
-//        modelDesc.text = modelDog.dogDescription
-//        modelDesc.backgroundColor = .gray
-//        modelDesc.textColor = .black
-//        modelDesc.textAlignment = .left
-//        modelDesc.layer.cornerRadius = 15
-//        modelDesc.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(modelDesc)
+
         
         modelName.text = modelDog.dogName
         modelName.font = .systemFont(ofSize: 25, weight: .bold)
@@ -143,7 +138,7 @@ class ProfileViewController: UIViewController {
             make.height.equalTo(200)
         }
         modelDescriptionBox.snp.makeConstraints { (make) in
-            make.bottom.equalTo(view.snp_bottomMargin).offset(-padding)
+            make.bottom.equalTo(homeButton.snp.top).offset(-padding)
             make.left.equalTo(view.snp_leftMargin).offset(padding)
             make.right.equalTo(view.snp_rightMargin).offset(-padding)
             make.top.equalTo(modelPic.snp_bottomMargin).offset(20)
@@ -161,7 +156,7 @@ class ProfileViewController: UIViewController {
             make.left.equalTo(modelAgeLabel.snp.right).offset(5)
         }
         modelDesc.snp.makeConstraints { (make) in
-            make.bottom.equalTo(view.snp_bottomMargin).offset(-padding)
+            make.bottom.equalTo(modelDescriptionBox.snp_bottomMargin).offset(-10)
             make.left.equalTo(modelAgeLabel.snp.left)
             make.right.equalTo(view.snp_rightMargin).offset(-padding)
             make.top.equalTo(modelAgeLabel.snp_bottomMargin).offset(20)

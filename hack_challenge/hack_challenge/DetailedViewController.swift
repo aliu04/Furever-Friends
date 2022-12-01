@@ -41,6 +41,7 @@ class DetailedViewController: UIViewController {
         title = "Profile"
         
         descriptionBox.backgroundColor = .white
+        descriptionBox.layer.cornerRadius = 15
         view.addSubview(descriptionBox)
         
         dogPic.image = UIImage(named: selectedDog.dogImage)
@@ -51,7 +52,6 @@ class DetailedViewController: UIViewController {
         dogDesc.text = selectedDog.dogDescription
         dogDesc.textColor = .black
         dogDesc.textAlignment = .left
-        //dogDesc.layer.cornerRadius = 15
         dogDesc.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dogDesc)
         
@@ -100,7 +100,7 @@ class DetailedViewController: UIViewController {
             make.left.equalTo(dogAgeLabel.snp.right).offset(5)
         }
         dogDesc.snp.makeConstraints { (make) in
-            make.bottom.equalTo(view.snp_bottomMargin).offset(-padding)
+            make.bottom.equalTo(descriptionBox.snp_bottomMargin).offset(-padding)
             make.left.equalTo(dogAgeLabel.snp.left)
             make.right.equalTo(view.snp_rightMargin).offset(-padding)
             make.top.equalTo(dogAgeLabel.snp_bottomMargin).offset(20)
