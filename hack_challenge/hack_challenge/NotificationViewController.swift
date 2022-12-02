@@ -127,9 +127,9 @@ extension NotificationViewController: UICollectionViewDataSource {
         
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        navigationController?.pushViewController(DetailedViewController(dog: notifs[indexPath.row]), animated: true)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailedViewController(dog: notifs[indexPath.row]), animated: true)
+    }
     
     @objc func popDetailedView() {
         navigationController?.popViewController(animated: true)

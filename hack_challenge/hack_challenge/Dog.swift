@@ -63,14 +63,3 @@ struct Dog: Codable {
 struct DogResponse: Codable {
     let users: [Dog]
 }
-
-
-//"id": 1,
-//            "age": 16,
-//            "bio": "text",
-//            "name": "Herb",
-//            "images": [
-//                {
-//                    "url": "https://None.s3.us-east-1.amazonaws.com/ZIC5Q59H54JKS54C.jpg",
-//                    "created_at": "2022-12-02 03:07:07.080535"
-//                }

@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = bgGreen
         
+
+        
         nameLabel.text = "Furever Friends"
         nameLabel.textColor = .black
         nameLabel.font = .systemFont(ofSize: 30, weight: .bold)
