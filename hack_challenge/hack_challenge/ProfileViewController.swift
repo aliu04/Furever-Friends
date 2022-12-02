@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     let modelAgeNumber = UILabel()
 
     
-    let modelDog = Dog(dogImage: "dog", dogName: "Buddy", dogDescription: "Likes long walks", displayed: true, dogAge: 2 )
+    let modelDog = Dog(id: 4, age: 3, bio: "hasdlfkjasdf", name: "Winter", images: [Image(url: "", created_at: "")])
 
 
     override func viewDidLoad() {
@@ -85,24 +85,24 @@ class ProfileViewController: UIViewController {
             make.width.equalTo(view.snp.width).multipliedBy(0.333)
         }
     
-        modelPic.image = UIImage(named: modelDog.dogImage)
+        modelPic.image = UIImage(named: modelDog.images[0].url)
         modelPic.contentMode = .scaleAspectFit
         modelPic.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(modelPic)
-        
-        
+
+
         modelDescriptionBox.backgroundColor = .white
         modelDescriptionBox.layer.cornerRadius = 15
         view.addSubview(modelDescriptionBox)
 
         
-        modelName.text = modelDog.dogName
+        modelName.text = modelDog.name
         modelName.font = .systemFont(ofSize: 25, weight: .bold)
         modelName.textColor = .black
         modelName.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(modelName)
         
-        modelDesc.text = modelDog.dogDescription
+        modelDesc.text = modelDog.bio
         modelDesc.textColor = .black
         modelDesc.textAlignment = .left
         //dogDesc.layer.cornerRadius = 15
@@ -115,7 +115,7 @@ class ProfileViewController: UIViewController {
         modelAgeLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(modelAgeLabel)
         
-        modelAgeNumber.text = String(modelDog.dogAge)
+        modelAgeNumber.text = String(modelDog.age)
         modelAgeNumber.font = .systemFont(ofSize: 18, weight: .bold)
         modelAgeNumber.textColor = .black
         modelAgeNumber.translatesAutoresizingMaskIntoConstraints = false

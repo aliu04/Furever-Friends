@@ -47,18 +47,18 @@ class DetailedViewController: UIViewController {
         descriptionBox.layer.cornerRadius = 15
         view.addSubview(descriptionBox)
         
-        dogPic.image = UIImage(named: selectedDog.dogImage)
+        dogPic.image = UIImage(named: selectedDog.images[0].url)
         dogPic.contentMode = .scaleAspectFit
         dogPic.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dogPic)
         
-        dogDesc.text = selectedDog.dogDescription
+        dogDesc.text = selectedDog.bio
         dogDesc.textColor = .black
         dogDesc.textAlignment = .left
         dogDesc.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dogDesc)
         
-        dogNameLabel.text = selectedDog.dogName
+        dogNameLabel.text = selectedDog.name
         dogNameLabel.font = .systemFont(ofSize: 25, weight: .bold)
         dogNameLabel.textColor = .black
         dogNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +70,7 @@ class DetailedViewController: UIViewController {
         dogAgeLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dogAgeLabel)
         
-        dogAgeNumber.text = String(selectedDog.dogAge)
+        dogAgeNumber.text = String(selectedDog.age)
         dogAgeNumber.font = .systemFont(ofSize: 18, weight: .bold)
         dogAgeNumber.textColor = .black
         dogAgeNumber.translatesAutoresizingMaskIntoConstraints = false

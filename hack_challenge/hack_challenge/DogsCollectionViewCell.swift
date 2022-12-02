@@ -59,8 +59,8 @@ class DogsCollectionViewCell: UICollectionViewCell {
 //    }
 
     func configure(dog: Dog) {
-        dogsImageView.image = UIImage(named: dog.dogImage)
-        dogName.text = dog.dogName
+        dogsImageView.image = UIImage(named: "dog")
+        dogName.text = dog.name
     }
 
     required init?(coder: NSCoder) {

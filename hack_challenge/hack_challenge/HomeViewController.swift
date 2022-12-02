@@ -174,11 +174,10 @@ class HomeViewController: ViewController {
         
         createDummyData()
         
-//        setupConstraints()
     }
     func createDummyData() {
         NetworkManager.getAllUsers { dog in
-            self.dogs = dog
+            self.dogs = dog.users
             self.selectedDogs = self.dogs
             self.collectionView1.reloadData()
         }
