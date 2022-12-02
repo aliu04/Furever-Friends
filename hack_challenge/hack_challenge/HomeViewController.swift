@@ -184,7 +184,8 @@ class HomeViewController: ViewController {
         }
     }
     @objc func presentProfile() {
-        navigationController?.pushViewController(ProfileViewController(), animated: true)
+        let pvc = ProfileViewController()
+        navigationController?.pushViewController(pvc, animated: true)
     }
     @objc func presentNotifications() {
         navigationController?.pushViewController(NotificationViewController(), animated: true)

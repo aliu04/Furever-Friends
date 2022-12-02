@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, EditDelegate {
+    
+    func save() {
+        print()
+    }
     
     var homeButton = UIButton()
     var notifButton = UIButton()
@@ -173,8 +177,11 @@ class ProfileViewController: UIViewController {
     @objc func popDetailedView() {
         navigationController?.popViewController(animated: true)
     }
+    
     @objc func openEditPage() {
-        present(EditViewController(), animated: true)
+//        present(EditViewController(dog: modelDog, delegate: self), animated: true)
     }
-}
+    
 
+}
+//extension EditViewController: EditDelegate 

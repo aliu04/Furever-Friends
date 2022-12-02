@@ -31,11 +31,11 @@ import UIKit
 //}
 
 struct Dog: Codable {
-    let dogImage: String
-    let dogName: String
-    let dogDescription: String
-    let displayed: Bool
-    let dogAge: Int
+    var dogImage: String
+    var dogName: String
+    var dogDescription: String
+    var displayed: Bool
+    var dogAge: Int
 }
 
 struct DogResponse: Codable {
