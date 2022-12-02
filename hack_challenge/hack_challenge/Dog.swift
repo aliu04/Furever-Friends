@@ -31,8 +31,8 @@ import UIKit
 //}
 
 struct Image: Codable {
-    let url: String
-    let created_at: String
+    var url: String
+    var created_at: String
 }
 
 struct Dog: Codable {
@@ -43,11 +43,11 @@ struct Dog: Codable {
 //    var displayed: Bool
 //    var dogAge: Int
 //=======
-    let id: Int
-    let age: Int
-    let bio: String
-    let name: String
-    let images: [Image]
+    var id: Int
+    var age: Int
+    var bio: String
+    var name: String
+    var images: [Image]
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -61,5 +61,5 @@ struct Dog: Codable {
 }
 
 struct DogResponse: Codable {
-    let users: [Dog]
+    var users: [Dog]
 }

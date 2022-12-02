@@ -9,15 +9,15 @@ import UIKit
 
 class EditViewController: UIViewController {
     
-    let editProfile = UILabel()
-    let picImageView = UIImageView()
-    let songLabel = UILabel()
-    let songTitleField = UITextField()
-    let artistLabel = UILabel()
-    let artistField = UITextField()
-    let albumLabel = UILabel()
-    let albumField = UITextField()
-    let submitButton = UIButton()
+    var editProfile = UILabel()
+    var picImageView = UIImageView()
+    var dogName = UILabel()
+    var nameInput = UITextField()
+    var dogAge = UILabel()
+    var ageInput = UITextField()
+    var dogBio = UILabel()
+    var bioInput = UITextField()
+    var submitButton = UIButton()
 
     //TODO: Add weak delegate and initializer
     var dog: Dog
@@ -43,53 +43,53 @@ class EditViewController: UIViewController {
         editProfile.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(editProfile)
         
-        picImageView.image = UIImage(named:"Melodrama")
+        picImageView.image = UIImage(named:"dog")
         picImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(picImageView)
         
-        songLabel.text = "Song: "
-        songLabel.font = .boldSystemFont(ofSize: 20)
-        songLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(songLabel)
+        dogName.text = "Name: "
+        dogName.font = .boldSystemFont(ofSize: 20)
+        dogName.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dogName)
         
-        songTitleField.text = dog.name
-        songTitleField.font = .systemFont(ofSize: 20)
-        songTitleField.backgroundColor = .systemGray3
-        songTitleField.layer.cornerRadius = 5
-        songTitleField.clipsToBounds = true
-        songTitleField.textAlignment = .left
-        songTitleField.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(songTitleField)
+        nameInput.text = dog.name
+        nameInput.font = .systemFont(ofSize: 20)
+        nameInput.backgroundColor = .systemGray3
+        nameInput.layer.cornerRadius = 5
+        nameInput.clipsToBounds = true
+        nameInput.textAlignment = .left
+        nameInput.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(nameInput)
         
-        artistLabel.text = "Artist: "
-        artistLabel.font = .boldSystemFont(ofSize: 20)
-        artistLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(artistLabel)
+        dogAge.text = "Age: "
+        dogAge.font = .boldSystemFont(ofSize: 20)
+        dogAge.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dogAge)
         
-        artistField.text = String(dog.age)
-        artistField.font = .systemFont(ofSize: 20)
-        artistField.backgroundColor = .systemGray3
-        artistField.layer.cornerRadius = 5
-        artistField.clipsToBounds = true
-        artistField.textAlignment = .left
-        artistField.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(artistField)
+        ageInput.text = String(dog.age)
+        ageInput.font = .systemFont(ofSize: 20)
+        ageInput.backgroundColor = .systemGray3
+        ageInput.layer.cornerRadius = 5
+        ageInput.clipsToBounds = true
+        ageInput.textAlignment = .left
+        ageInput.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(ageInput)
         
-        albumLabel.text = "Album: "
-        albumLabel.font = .boldSystemFont(ofSize: 20)
-        albumLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(albumLabel)
+        dogBio.text = "Bio: "
+        dogBio.font = .boldSystemFont(ofSize: 20)
+        dogBio.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dogBio)
         
-        albumField.text = dog.bio
-        albumField.font = .systemFont(ofSize: 20)
-        albumField.backgroundColor = .systemGray3
-        albumField.layer.cornerRadius = 5
-        albumField.clipsToBounds = true
-        albumField.textAlignment = .left
-        albumField.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(albumField)
+        bioInput.text = dog.bio
+        bioInput.font = .systemFont(ofSize: 20)
+        bioInput.backgroundColor = .systemGray3
+        bioInput.layer.cornerRadius = 5
+        bioInput.clipsToBounds = true
+        bioInput.textAlignment = .left
+        bioInput.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bioInput)
 
-        submitButton.setTitle("Submit", for: .normal)
+        submitButton.setTitle("Save", for: .normal)
         submitButton.setTitleColor(.systemBlue, for: .normal)
         submitButton.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
@@ -98,61 +98,59 @@ class EditViewController: UIViewController {
         setupConstraints()
     }
 
-//    @objc func changeContactCell() {
-//        //TODO: call delegate functions and dismiss view
-//        delegate?.changeSongName(song: songTitleField.text ?? "sorry")
-//        dog.dogName = songTitleField.text!
-//        delegate?.changeArtist(artistName: artistField.text ?? "sorry")
-//        dog.dogAge = Int(artistField.text!) ?? 0
-//        delegate?.changeAlbum(albumName: albumField.text ?? "sorry")
-//        dog.dogDescription = albumField.text!
-//        dismiss(animated: true)
-//    }
+    @objc func saveChanges() {
+        delegate?.saveName(name: nameInput.text ?? "")
+        dog.name = nameInput.text!
+        delegate?.saveAge(ageLabel: ageInput.text ?? "")
+        delegate?.saveBio(bio: bioInput.text ?? "")
+        dog.bio = bioInput.text!
+        dismiss(animated: true)
+    }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            editSong.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            editSong.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            editProfile.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            editProfile.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
             picImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            picImageView.topAnchor.constraint(equalTo: editSong.bottomAnchor, constant: 20),
+            picImageView.topAnchor.constraint(equalTo: editProfile.bottomAnchor, constant: 20),
             picImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
             picImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
         ])
         
         NSLayoutConstraint.activate([
-            songLabel.topAnchor.constraint(equalTo: picImageView.bottomAnchor, constant: 20),
-            songLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50)
+            dogName.topAnchor.constraint(equalTo: picImageView.bottomAnchor, constant: 20),
+            dogName.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50)
         ])
 
         NSLayoutConstraint.activate([
-            songTitleField.topAnchor.constraint(equalTo: picImageView.bottomAnchor, constant: 20),
-            songTitleField.leadingAnchor.constraint(equalTo: songLabel.trailingAnchor, constant: 10),
-            songTitleField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
+            nameInput.topAnchor.constraint(equalTo: picImageView.bottomAnchor, constant: 20),
+            nameInput.leadingAnchor.constraint(equalTo: dogName.trailingAnchor, constant: 10),
+            nameInput.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
         ])
         
         NSLayoutConstraint.activate([
-            artistLabel.topAnchor.constraint(equalTo: songLabel.bottomAnchor, constant: 10),
-            artistLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50)
+            dogAge.topAnchor.constraint(equalTo: nameInput.bottomAnchor, constant: 10),
+            dogAge.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50)
         ])
         
         NSLayoutConstraint.activate([
-            artistField.topAnchor.constraint(equalTo: songTitleField.bottomAnchor, constant: 10),
-            artistField.leadingAnchor.constraint(equalTo: artistLabel.trailingAnchor, constant: 10),
-            artistField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
+            ageInput.topAnchor.constraint(equalTo: nameInput.bottomAnchor, constant: 10),
+            ageInput.leadingAnchor.constraint(equalTo: dogAge.trailingAnchor, constant: 10),
+            ageInput.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
         ])
         
         NSLayoutConstraint.activate([
-            albumLabel.topAnchor.constraint(equalTo: artistLabel.bottomAnchor, constant: 10),
-            albumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50)
+            dogBio.topAnchor.constraint(equalTo: dogAge.bottomAnchor, constant: 10),
+            dogBio.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50)
         ])
         
         NSLayoutConstraint.activate([
-            albumField.topAnchor.constraint(equalTo: artistField.bottomAnchor, constant: 10),
-            albumField.leadingAnchor.constraint(equalTo: albumLabel.trailingAnchor, constant: 10),
-            albumField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
+            bioInput.topAnchor.constraint(equalTo: ageInput.bottomAnchor, constant: 10),
+            bioInput.leadingAnchor.constraint(equalTo: dogBio.trailingAnchor, constant: 10),
+            bioInput.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33),
         ])
 
         NSLayoutConstraint.activate([
@@ -161,14 +159,14 @@ class EditViewController: UIViewController {
         ])
     }
     
-    @objc func saveChanges() {
-            dismiss(animated: true)
-        }
-    
+//    @objc func saveChanges() {
+//            dismiss(animated: true)
+//        }
+//
 }
-
-//TODO: Add protocol to change contact
 protocol EditDelegate: UIViewController {
-    func save()
+    func saveName(name: String)
+    func saveAge(ageLabel: String)
+    func saveBio(bio: String)
 
 }

@@ -88,7 +88,6 @@ class NetworkManager {
                 let jsonDecoder = JSONDecoder()
                 if let userResponse = try? jsonDecoder.decode(Match.self, from: data) {
                     completion(userResponse)
-                    print("match worked")
                 } else {
                     print("failed to decode createMatch")
                 }

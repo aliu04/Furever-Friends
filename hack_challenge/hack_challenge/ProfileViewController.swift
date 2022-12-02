@@ -8,6 +8,18 @@
 import UIKit
 
 class ProfileViewController: UIViewController, EditDelegate {
+    func saveName(name: String) {
+        modelName.text = name
+    }
+    
+    func saveAge(ageLabel: String) {
+        modelAgeNumber.text = ageLabel
+    }
+    
+    func saveBio(bio: String) {
+        modelDesc.text = bio
+    }
+    
     
     func save() {
         print()
@@ -27,11 +39,11 @@ class ProfileViewController: UIViewController, EditDelegate {
     var modelDescriptionBox = UIView(frame: .zero)
 
     
-    let modelPic = UIImageView()
-    let modelDesc = UITextView()
-    let modelName = UILabel()
-    let modelAgeLabel = UILabel()
-    let modelAgeNumber = UILabel()
+    var modelPic = UIImageView()
+    var modelDesc = UITextView()
+    var modelName = UILabel()
+    var modelAgeLabel = UILabel()
+    var modelAgeNumber = UILabel()
 
     
     var modelDog = Dog(id: 4, age: 3, bio: "hasdlfkjasdf", name: "Winter", images: [Image(url: "", created_at: "")])
@@ -194,5 +206,3 @@ class ProfileViewController: UIViewController, EditDelegate {
     }
 }
 
-
-//extension EditViewController: EditDelegate 
