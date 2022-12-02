@@ -179,7 +179,7 @@ class ProfileViewController: UIViewController, EditDelegate {
     }
     
     @objc func openEditPage() {
-//        present(EditViewController(dog: modelDog, delegate: self), animated: true)
+        present(EditViewController(dog: modelDog, delegate: self), animated: true)
     }
     
 

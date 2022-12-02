@@ -9,7 +9,7 @@ import UIKit
 
 class EditViewController: UIViewController {
     
-    let editSong = UILabel()
+    let editProfile = UILabel()
     let picImageView = UIImageView()
     let songLabel = UILabel()
     let songTitleField = UITextField()
@@ -38,10 +38,10 @@ class EditViewController: UIViewController {
         
         view.backgroundColor = .white
 
-        editSong.text = "Edit Song"
-        editSong.font = .boldSystemFont(ofSize: 18)
-        editSong.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(editSong)
+        editProfile.text = "Edit Profile"
+        editProfile.font = .boldSystemFont(ofSize: 18)
+        editProfile.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(editProfile)
         
         picImageView.image = UIImage(named:"Melodrama")
         picImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,7 @@ class EditViewController: UIViewController {
         songLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(songLabel)
         
-        songTitleField.text = dog.dogName
+        songTitleField.text = dog.name
         songTitleField.font = .systemFont(ofSize: 20)
         songTitleField.backgroundColor = .systemGray3
         songTitleField.layer.cornerRadius = 5
@@ -66,7 +66,7 @@ class EditViewController: UIViewController {
         artistLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(artistLabel)
         
-        artistField.text = String(dog.dogAge)
+        artistField.text = String(dog.age)
         artistField.font = .systemFont(ofSize: 20)
         artistField.backgroundColor = .systemGray3
         artistField.layer.cornerRadius = 5
@@ -80,7 +80,7 @@ class EditViewController: UIViewController {
         albumLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(albumLabel)
         
-        albumField.text = dog.dogDescription
+        albumField.text = dog.bio
         albumField.font = .systemFont(ofSize: 20)
         albumField.backgroundColor = .systemGray3
         albumField.layer.cornerRadius = 5
