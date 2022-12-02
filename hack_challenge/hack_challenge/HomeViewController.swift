@@ -12,14 +12,16 @@ class HomeViewController: ViewController {
 
     let filterBg = UIColor(red: 0.98, green: 0.929, blue: 0.804, alpha: 1.0)
     let borderColor = CGColor(red: 0.678, green: 0.757, blue: 0.502, alpha: 1.0)
+    
+    //let refreshControl = UIRefreshControl()
 
     //size: 0 = small, 1 = medium, 2 = big
     //volume: 3 = quiet, 4 = loud
-    let dog1 = Dog(dogImage: "dog", dogName: "Buddy", dogDescription: "Likes long walks", displayed: true, dogAge: 2 )
-    let dog2 = Dog(dogImage: "dog2", dogName: "Spot", dogDescription: "Likes long walks", displayed: true, dogAge: 3 )
-    let dog3 = Dog(dogImage: "dog3", dogName: "Summer", dogDescription: "Likes long walks", displayed: true, dogAge: 10 )
-    let dog4 = Dog(dogImage: "dog4", dogName: "Cat", dogDescription: "Likes long walks", displayed: true, dogAge: 5 )
-    let dog5 = Dog(dogImage: "dog5", dogName: "Winter", dogDescription: "Likes long walks", displayed: true, dogAge: 12 )
+//    let dog1 = Dog(dogImage: "dog", dogName: "Buddy", dogDescription: "Likes long walks", displayed: true, dogAge: 2 )
+//    let dog2 = Dog(dogImage: "dog2", dogName: "Spot", dogDescription: "Likes long walks", displayed: true, dogAge: 3 )
+//    let dog3 = Dog(dogImage: "dog3", dogName: "Summer", dogDescription: "Likes long walks", displayed: true, dogAge: 10 )
+//    let dog4 = Dog(dogImage: "dog4", dogName: "Cat", dogDescription: "Likes long walks", displayed: true, dogAge: 5 )
+//    let dog5 = Dog(dogImage: "dog5", dogName: "Winter", dogDescription: "Likes long walks", displayed: true, dogAge: 12 )
     
 //    let smallFilter = UILabel()
 //    let mediumFilter = UILabel()
@@ -32,6 +34,8 @@ class HomeViewController: ViewController {
 //    let filter3 = Filter(select: false)
 //    let filter4 = Filter(select: false)
 //    let filter5 = Filter(select: false)
+    
+    //refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
 
     var dogs: [Dog] = []
     var selectedDogs: [Dog] = []
@@ -55,8 +59,8 @@ class HomeViewController: ViewController {
         title = "Furever Friends"
         view.backgroundColor = bgGreen
 
-        dogs = [dog1, dog2, dog3, dog4, dog5]
-        selectedDogs = [dog1, dog2, dog3, dog4, dog5]
+//        dogs = [dog1, dog2, dog3, dog4, dog5]
+//        selectedDogs = [dog1, dog2, dog3, dog4, dog5]
 //        allfilters = [smallFilter, mediumFilter, largeFilter, quietFilter, loudFilter]
 //        filterTracker = [filter1, filter2, filter3, filter4, filter5]
 //
@@ -168,10 +172,16 @@ class HomeViewController: ViewController {
             make.width.equalTo(view.snp.width).multipliedBy(0.333)
         }
         
+        createDummyData()
+        
 //        setupConstraints()
     }
     func createDummyData() {
-        
+        NetworkManager.getAllUsers { dog in
+            self.dogs = dog
+            self.selectedDogs = self.dogs
+            self.collectionView1.reloadData()
+        }
     }
     @objc func presentProfile() {
         navigationController?.pushViewController(ProfileViewController(), animated: true)
@@ -259,6 +269,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navigationController?.pushViewController(DetailedViewController(dog: selectedDogs[indexPath.row]), animated: true)
     }
+
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

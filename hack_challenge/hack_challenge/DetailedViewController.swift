@@ -139,6 +139,7 @@ class DetailedViewController: UIViewController {
         ])
         
     }
+    
 }
 
 //protocol detailedInfoDelegate: UIViewController {
