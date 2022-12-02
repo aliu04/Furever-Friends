@@ -30,7 +30,7 @@ class NotificationCollectionViewCell: UICollectionViewCell {
     }
     
     func configureNotifs(match: Dog) {
-        notif.text = "You matched with " + match.dogName + "!"
+        notif.text = "You matched with " + match.name + "!"
     }
 
     required init?(coder: NSCoder) {

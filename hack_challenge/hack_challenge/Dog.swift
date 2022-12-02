@@ -30,15 +30,47 @@ import UIKit
 //
 //}
 
+struct Image: Codable {
+    let url: String
+    let created_at: String
+}
+
 struct Dog: Codable {
-    var dogImage: String
-    var dogName: String
-    var dogDescription: String
-    var displayed: Bool
-    var dogAge: Int
+//<<<<<< HEAD
+//    var dogImage: String
+//    var dogName: String
+//    var dogDescription: String
+//    var displayed: Bool
+//    var dogAge: Int
+//=======
+    let id: Int
+    let age: Int
+    let bio: String
+    let name: String
+    let images: [Image]
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case age
+        case bio
+        case name
+        case images
+    }
+    
+//>>>>>>> 4e550bf4e6495fa54225d83a3f986def3670b9a7
 }
 
 struct DogResponse: Codable {
-    let success: Bool
-    let data: [Dog]
+    let users: [Dog]
 }
+
+
+//"id": 1,
+//            "age": 16,
+//            "bio": "text",
+//            "name": "Herb",
+//            "images": [
+//                {
+//                    "url": "https://None.s3.us-east-1.amazonaws.com/ZIC5Q59H54JKS54C.jpg",
+//                    "created_at": "2022-12-02 03:07:07.080535"
+//                }

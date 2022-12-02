@@ -26,9 +26,9 @@ class NotificationViewController: UIViewController {
     var notifButton = UIButton()
     var profileButton = UIButton()
     
-    let dog1 = Dog(dogImage: "dog", dogName: "Buddy", dogDescription: "Likes long walks", displayed: true, dogAge: 2 )
-    let dog2 = Dog(dogImage: "dog2", dogName: "Spot", dogDescription: "Likes long walks", displayed: true, dogAge: 3 )
-    let dog3 = Dog(dogImage: "dog3", dogName: "Summer", dogDescription: "Likes long walks", displayed: true, dogAge: 10 )
+    let dog1 = Dog(id: 1, age: 12, bio: "asdfasdf", name: "Buddy", images: [])
+    let dog2 = Dog(id: 2, age: 6, bio: "likes walks", name: "Spot", images: [])
+    let dog3 = Dog(id: 3, age: 2, bio: "likes runs", name: "Summer", images: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
