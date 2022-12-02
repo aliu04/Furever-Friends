@@ -26,11 +26,14 @@ class DetailedViewController: UIViewController {
     let like = UIButton()
     let dislike = UIButton()
     
+    var clickedStatus: Bool
+    
     //weak var delegate: detailedInfoDelegate?
     
     init(dog: Dog ) {
         //delegate = inputDelegate
         self.selectedDog = dog
+        self.clickedStatus = false
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -47,7 +50,9 @@ class DetailedViewController: UIViewController {
         descriptionBox.layer.cornerRadius = 15
         view.addSubview(descriptionBox)
         
-        dogPic.image = UIImage(named: selectedDog.images[0].url)
+        //clickedStatus = false
+        
+        dogPic.image = UIImage(named: "dog")
         dogPic.contentMode = .scaleAspectFit
         dogPic.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dogPic)
@@ -78,11 +83,13 @@ class DetailedViewController: UIViewController {
         
         like.contentMode = .scaleAspectFill
         like.setImage(UIImage(named: "heart button"), for: .normal)
+        like.addTarget(self, action: #selector(likeDog), for: .touchUpInside)
         like.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(like)
         
         dislike.contentMode = .scaleAspectFill
         dislike.setImage(UIImage(named: "x button"), for: .normal)
+        dislike.addTarget(self, action: #selector(dislikeDog), for: .touchUpInside)
         dislike.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dislike)
         
@@ -138,6 +145,21 @@ class DetailedViewController: UIViewController {
             dislike.heightAnchor.constraint(equalToConstant: 165)
         ])
         
+    }
+    @objc func likeDog() {
+        //add match function thing
+        if clickedStatus == false {
+            NetworkManager.createMatch(id1: 2, id2: 3) { match in
+                self.clickedStatus = true
+            }
+        }
+
+        print("dog liked")
+        print(self.clickedStatus)
+    }
+    @objc func dislikeDog() {
+        //add match function thing
+        print("dog unliked")
     }
     
 }

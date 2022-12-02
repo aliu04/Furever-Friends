@@ -14,6 +14,7 @@
 		3D5AE2282935D02C0099F53C /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5AE2272935D02C0099F53C /* DetailedViewController.swift */; };
 		3D5AE22A2936BA6D0099F53C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5AE2292936BA6D0099F53C /* NetworkManager.swift */; };
 		3D886D7D2938479D00751DAC /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D886D7C2938479C00751DAC /* EditViewController.swift */; };
+		3D886D7F2939E66700751DAC /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D886D7E2939E66700751DAC /* Match.swift */; };
 		3D9A63A6293555FF0038D26D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A63A5293555FF0038D26D /* AppDelegate.swift */; };
 		3D9A63A8293555FF0038D26D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A63A7293555FF0038D26D /* SceneDelegate.swift */; };
 		3D9A63AA293555FF0038D26D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A63A9293555FF0038D26D /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		3D5AE2272935D02C0099F53C /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		3D5AE2292936BA6D0099F53C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3D886D7C2938479C00751DAC /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		3D886D7E2939E66700751DAC /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		3D9A63A2293555FF0038D26D /* hack_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hack_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9A63A5293555FF0038D26D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D9A63A7293555FF0038D26D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				3D5AE223293566680099F53C /* Filter.swift */,
 				3DC8625529355689005A64C2 /* Dog.swift */,
 				3D5AE2292936BA6D0099F53C /* NetworkManager.swift */,
+				3D886D7E2939E66700751DAC /* Match.swift */,
 				3DC86257293556A5005A64C2 /* DogsCollectionViewCell.swift */,
 				3DC86259293556D1005A64C2 /* ProfileViewController.swift */,
 				3D886D7C2938479C00751DAC /* EditViewController.swift */,
@@ -247,6 +250,7 @@
 				3DC8625629355689005A64C2 /* Dog.swift in Sources */,
 				3DC8625A293556D1005A64C2 /* ProfileViewController.swift in Sources */,
 				3DC8625429355666005A64C2 /* HomeViewController.swift in Sources */,
+				3D886D7F2939E66700751DAC /* Match.swift in Sources */,
 				3D886D7D2938479D00751DAC /* EditViewController.swift in Sources */,
 				2EF3648629385F7500247DAE /* NotificationViewController.swift in Sources */,
 				3D5AE222293565B30099F53C /* FilterCollectionViewCell.swift in Sources */,

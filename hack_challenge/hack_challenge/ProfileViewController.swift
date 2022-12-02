@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     let modelAgeNumber = UILabel()
 
     
-    let modelDog = Dog(id: 4, age: 3, bio: "hasdlfkjasdf", name: "Winter", images: [Image(url: "", created_at: "")])
+    var modelDog = Dog(id: 4, age: 3, bio: "hasdlfkjasdf", name: "Winter", images: [Image(url: "", created_at: "")])
 
 
     override func viewDidLoad() {
@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
         profileButton.backgroundColor = lighterGreen
         profileButton.layer.borderWidth = 1
         profileButton.layer.borderColor = borderColor
-        //profileButton.addTarget(self, action: #selector(presentProfile), for:.touchUpInside)
+        profileButton.addTarget(self, action: #selector(practice), for:.touchUpInside)
         profileButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(profileButton)
         
@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
         notifButton.backgroundColor = lighterGreen
         notifButton.layer.borderWidth = 1
         notifButton.layer.borderColor = borderColor
-        //homeButton.addTarget(self, action: #selector(presentView), for:.touchUpInside)
+        notifButton.addTarget(self, action: #selector(openNotifs), for:.touchUpInside)
         notifButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(notifButton)
         
@@ -129,7 +129,6 @@ class ProfileViewController: UIViewController {
         
         
         let padding = 15
-        let padding2 = 25
         
         modelPic.snp.makeConstraints { (make) in
             make.top.equalTo(view.snp_topMargin).offset(padding)
@@ -175,6 +174,17 @@ class ProfileViewController: UIViewController {
     }
     @objc func openEditPage() {
         present(EditViewController(), animated: true)
+    }
+    @objc func openNotifs() {
+        navigationController?.pushViewController(NotificationViewController(), animated: true)
+    }
+    
+    @objc func practice() {
+        var modelImage = Image(url: "https://hack-challenge-bucket.s3.us-east-1.amazonaws.com/Y3ZXT4MV7FDAPDAB.jpg", created_at: "2022-12-02 03:14:05.279571")
+        
+        NetworkManager.createDog(age: 5, bio: "likes to bark", name: "asdfasdf", images: []) { dog in
+            self.modelDog = dog
+        }
     }
 }
 
