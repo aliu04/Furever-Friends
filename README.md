@@ -16,7 +16,7 @@ Homepage where you can browse other dogs available to match with.
 ![image](https://user-images.githubusercontent.com/119459603/205412659-150124fb-7148-4aa2-8661-959a8e26795c.png)
 Click on a dog for more details and decide whether you like them or want to pass.
 
-![image](https://user-images.githubusercontent.com/119459603/205412141-d0f8cfae-ba59-4ee6-9468-bc2bc19180c5.png)
+![image](https://user-images.githubusercontent.com/119459603/205413924-f15a4f14-6d59-4607-8d15-fb376287df70.png)
 Notifications page that displays all of your matches.
 
 ![image](https://user-images.githubusercontent.com/119459603/205412292-7997360e-eda2-4530-9193-702225801051.png)
