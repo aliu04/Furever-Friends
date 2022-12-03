@@ -28,7 +28,7 @@ Tinder for dogs! Lets users find friends for their dogs by matching two dogs if 
 ## Requirements
 1. SwiftUI uses both Snapkit and NSLayoutConstraint.
 2. Both the home page and notifications page use a collection view.
-3. Uses push to navigate between different pages of the app.
+3. Uses push to navigate between different pages of the app and a present view for the edit profile page.
 4. Integrates the backends API to create, get, and update users. 
 
 
