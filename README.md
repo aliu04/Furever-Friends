@@ -6,7 +6,7 @@ Furever Friends
 ## App Tagline
 Social app for pet owners!
 
-## Backend repo
+## Backend Repo
 https://github.com/armtew22/AppDev-Backend
 
 ## Important Features
